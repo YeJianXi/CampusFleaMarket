@@ -1,0 +1,61 @@
+﻿@model CampusFleaMarket.Model.Users
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Users</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_StuNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_StuNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_Passward)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_Passward)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.U_State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.U_State)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,11 @@
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\obj\Debug\CampusFleaMarket.IDAL.csprojResolveAssemblyReference.cache
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\CampusFleaMarket.IDAL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\CampusFleaMarket.IDAL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\CampusFleaMarket.Model.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\EntityFramework.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\CampusFleaMarket.Model.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\EntityFramework.xml
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\obj\Debug\CampusFleaMarket.IDAL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\obj\Debug\CampusFleaMarket.IDAL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IDAL\bin\Debug\CampusFleaMarket.IDAL.dll.config

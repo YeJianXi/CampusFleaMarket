@@ -1,0 +1,105 @@
+﻿@model IEnumerable<CampusFleaMarket.Model.Goods>
+
+@{
+    ViewBag.Title = "商品管理";
+    Layout = "~/Views/Shared/Manager_Layout.cshtml";
+}
+@section Style{
+    <style>
+
+
+
+    </style>
+}
+@section Script{
+    <script>
+        function confirmDelete(name, id) {
+            var result = confirm("你确定要删除【" + name + "】吗？");
+            if (result) {
+
+                window.location = "@(Url.Action("Delete"))/" + id
+            }
+        }
+
+        function comfirmAllDelete() {
+            if (confirm("你确定要批量删除吗？")) {
+                window.document.getElementsByTagName("form")[0].submit();
+            }
+        }
+    </script>
+
+}
+<h2>二手物品列表</h2>
+@section Create{
+    @Html.ActionLink("添加", "Create")
+    <a href="#" onclick="comfirmAllDelete()">批量删除</a>
+}
+@using (Html.BeginForm("AllDelete", "GoodManager"))
+{
+    <table border="1" cellspacing="0">
+        <tr bgcolor="#757675" style="color: white">
+            <th>
+                <input type="checkbox" id="allSelect" />
+                全选
+            </th>
+            <th>
+                物品名称
+            </th>
+            <th>
+                类别
+            </th>
+            <th>
+                描述
+            </th>
+            <th>
+                发布用户
+            </th>
+            <th>
+                价格
+            </th>
+            <th>
+                发表日期
+            </th>
+            <th>
+                商品状态
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <div class="d_tr"><input type="checkbox" name="select" value="@item.G_ID" /></div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.G_Name)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.CategoryOfGoods.C_Name)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.G_Description)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.Users.U_Name)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.G_Price)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.G_Date)</div>
+        </td>
+        <td>
+            <div class="d_tr">@Html.DisplayFor(modelItem => item.G_State)</div>
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new {  id=item.G_ID }) |
+            @Html.ActionLink("详细", "Details", new {  id=item.G_ID }) |
+            <a href="#" onclick="confirmDelete(' @(item.G_Name)',@(item.G_ID))">删除</a>
+        </td>
+    </tr>
+}
+
+    </table>
+}

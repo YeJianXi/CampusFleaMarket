@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CampusFleaMarketDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“CampusFleaMarketDB.dbo.Administor”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Administor">
+          <Property Name="A_ID" Type="int" />
+          <Property Name="A_Name" Type="varchar" MaxLength="20" />
+          <Property Name="A_Number" Type="varchar" MaxLength="20" />
+          <Property Name="A_Password" Type="varchar" MaxLength="20" />
+          <Property Name="A_Phone" Type="char" MaxLength="11" />
+          <Property Name="A_Address" Type="varchar" MaxLength="20" />
+          <Property Name="A_HeadImage" Type="image" />
+        </EntityType>-->
+        <EntityType Name="CategoryOfGoods">
+          <Key>
+            <PropertyRef Name="C_ID" />
+          </Key>
+          <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="C_Name" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="G_ID" />
+          </Key>
+          <Property Name="G_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="G_Name" Type="varchar" MaxLength="20" />
+          <Property Name="G_Category" Type="int" />
+          <Property Name="G_Description" Type="varchar" MaxLength="500" />
+          <Property Name="G_User" Type="int" />
+          <Property Name="G_Price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="G_Inventory" Type="int" />
+          <Property Name="G_Date" Type="datetime" />
+          <Property Name="G_SalesVolume" Type="int" />
+          <Property Name="G_State" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="GoodsComments">
+          <Key>
+            <PropertyRef Name="GC_ID" />
+          </Key>
+          <Property Name="GC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GC_User" Type="int" />
+          <Property Name="GC_Content" Type="varchar" MaxLength="500" />
+          <Property Name="GC_Point" Type="float" />
+          <Property Name="GC_Good" Type="int" />
+          <Property Name="GC_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MessageComments">
+          <Key>
+            <PropertyRef Name="MC_ID" />
+          </Key>
+          <Property Name="MC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MC_Date" Type="datetime" />
+          <Property Name="MC_Content" Type="nchar" MaxLength="10" />
+          <Property Name="MC_User" Type="int" />
+          <Property Name="MC_Message" Type="int" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="M_ID" />
+          </Key>
+          <Property Name="M_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_Description" Type="varchar" MaxLength="200" />
+          <Property Name="M_Date" Type="datetime" />
+          <Property Name="M_Users" Type="int" />
+        </EntityType>
+        <EntityType Name="ShopRecords">
+          <Key>
+            <PropertyRef Name="SR_ID" />
+          </Key>
+          <Property Name="SR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SR_RecordNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SR_User" Type="int" />
+          <Property Name="SR_Good" Type="int" />
+          <Property Name="SR_GoodCount" Type="int" />
+          <Property Name="SR_OrderDate" Type="datetime" />
+          <Property Name="SR_PayType" Type="varchar" MaxLength="20" />
+          <Property Name="SR_Address" Type="varchar" MaxLength="100" />
+          <Property Name="SR_Money" Type="money" />
+          <Property Name="SR_ConfirmDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_StuNumber" Type="varchar" MaxLength="20" />
+          <Property Name="U_Name" Type="varchar" MaxLength="20" />
+          <Property Name="U_Passward" Type="varchar" MaxLength="20" />
+          <Property Name="U_Phone" Type="varchar" MaxLength="20" />
+          <Property Name="U_HeadImage" Type="varchar" MaxLength="50" />
+          <Property Name="U_CompusCard" Type="varchar" MaxLength="200" />
+          <Property Name="U_State" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Goods__G_Categor__1920BF5C">
+          <End Role="CategoryOfGoods" Type="Self.CategoryOfGoods" Multiplicity="0..1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryOfGoods">
+              <PropertyRef Name="C_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="G_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Goods__G_User__1A14E395">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="G_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShopRecor__SR_Go__25869641">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="G_ID" />
+            </Principal>
+            <Dependent Role="ShopRecords">
+              <PropertyRef Name="SR_Good" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShopRecor__SR_Us__24927208">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="ShopRecords">
+              <PropertyRef Name="SR_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserComme__UC_Go__2C3393D0">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="G_ID" />
+            </Principal>
+            <Dependent Role="GoodsComments">
+              <PropertyRef Name="GC_Good" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserComme__UC_Us__2B3F6F97">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="GoodsComments">
+              <PropertyRef Name="GC_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageComments_Messages">
+          <End Role="Messages" Type="Self.Messages" Multiplicity="0..1" />
+          <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="M_ID" />
+            </Principal>
+            <Dependent Role="MessageComments">
+              <PropertyRef Name="MC_Message" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageComments_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="MessageComments">
+              <PropertyRef Name="MC_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Messages_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="M_Users" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CampusFleaMarketDBModelStoreContainer">
+          <EntitySet Name="CategoryOfGoods" EntityType="Self.CategoryOfGoods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoodsComments" EntityType="Self.GoodsComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MessageComments" EntityType="Self.MessageComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopRecords" EntityType="Self.ShopRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Goods__G_Categor__1920BF5C" Association="Self.FK__Goods__G_Categor__1920BF5C">
+            <End Role="CategoryOfGoods" EntitySet="CategoryOfGoods" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Goods__G_User__1A14E395" Association="Self.FK__Goods__G_User__1A14E395">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShopRecor__SR_Go__25869641" Association="Self.FK__ShopRecor__SR_Go__25869641">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="ShopRecords" EntitySet="ShopRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShopRecor__SR_Us__24927208" Association="Self.FK__ShopRecor__SR_Us__24927208">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ShopRecords" EntitySet="ShopRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserComme__UC_Go__2C3393D0" Association="Self.FK__UserComme__UC_Go__2C3393D0">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="GoodsComments" EntitySet="GoodsComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserComme__UC_Us__2B3F6F97" Association="Self.FK__UserComme__UC_Us__2B3F6F97">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GoodsComments" EntitySet="GoodsComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageComments_Messages" Association="Self.FK_MessageComments_Messages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="MessageComments" EntitySet="MessageComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageComments_Users" Association="Self.FK_MessageComments_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MessageComments" EntitySet="MessageComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CampusFleaMarketDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CategoryOfGoods">
+          <Key>
+            <PropertyRef Name="C_ID" />
+          </Key>
+          <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__G_Categor__1920BF5C" FromRole="CategoryOfGoods" ToRole="Goods" />
+        </EntityType>
+        <EntityType Name="Goods">
+          <Key>
+            <PropertyRef Name="G_ID" />
+          </Key>
+          <Property Name="G_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="G_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="G_Category" Type="Int32" />
+          <Property Name="G_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="G_User" Type="Int32" />
+          <Property Name="G_Price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="G_Inventory" Type="Int32" />
+          <Property Name="G_Date" Type="DateTime" Precision="3" />
+          <Property Name="G_SalesVolume" Type="Int32" />
+          <Property Name="G_State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CategoryOfGoods" Relationship="Self.FK__Goods__G_Categor__1920BF5C" FromRole="Goods" ToRole="CategoryOfGoods" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Goods__G_User__1A14E395" FromRole="Goods" ToRole="Users" />
+          <NavigationProperty Name="ShopRecords" Relationship="Self.FK__ShopRecor__SR_Go__25869641" FromRole="Goods" ToRole="ShopRecords" />
+          <NavigationProperty Name="GoodsComments" Relationship="Self.FK__UserComme__UC_Go__2C3393D0" FromRole="Goods" ToRole="GoodsComments" />
+        </EntityType>
+        <EntityType Name="GoodsComments">
+          <Key>
+            <PropertyRef Name="GC_ID" />
+          </Key>
+          <Property Name="GC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GC_User" Type="Int32" />
+          <Property Name="GC_Content" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="GC_Point" Type="Double" />
+          <Property Name="GC_Good" Type="Int32" />
+          <Property Name="GC_Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__UserComme__UC_Go__2C3393D0" FromRole="GoodsComments" ToRole="Goods" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__UserComme__UC_Us__2B3F6F97" FromRole="GoodsComments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="MessageComments">
+          <Key>
+            <PropertyRef Name="MC_ID" />
+          </Key>
+          <Property Name="MC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MC_Date" Type="DateTime" Precision="3" />
+          <Property Name="MC_Content" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MC_User" Type="Int32" />
+          <Property Name="MC_Message" Type="Int32" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK_MessageComments_Messages" FromRole="MessageComments" ToRole="Messages" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_MessageComments_Users" FromRole="MessageComments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="M_ID" />
+          </Key>
+          <Property Name="M_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="M_Date" Type="DateTime" Precision="3" />
+          <Property Name="M_Users" Type="Int32" />
+          <NavigationProperty Name="MessageComments" Relationship="Self.FK_MessageComments_Messages" FromRole="Messages" ToRole="MessageComments" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Messages_Users" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ShopRecords">
+          <Key>
+            <PropertyRef Name="SR_ID" />
+          </Key>
+          <Property Name="SR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SR_RecordNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SR_User" Type="Int32" />
+          <Property Name="SR_Good" Type="Int32" />
+          <Property Name="SR_GoodCount" Type="Int32" />
+          <Property Name="SR_OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="SR_PayType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SR_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SR_Money" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SR_ConfirmDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__ShopRecor__SR_Go__25869641" FromRole="ShopRecords" ToRole="Goods" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__ShopRecor__SR_Us__24927208" FromRole="ShopRecords" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_StuNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_Passward" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_HeadImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="U_CompusCard" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="U_State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__G_User__1A14E395" FromRole="Users" ToRole="Goods" />
+          <NavigationProperty Name="GoodsComments" Relationship="Self.FK__UserComme__UC_Us__2B3F6F97" FromRole="Users" ToRole="GoodsComments" />
+          <NavigationProperty Name="MessageComments" Relationship="Self.FK_MessageComments_Users" FromRole="Users" ToRole="MessageComments" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="ShopRecords" Relationship="Self.FK__ShopRecor__SR_Us__24927208" FromRole="Users" ToRole="ShopRecords" />
+        </EntityType>
+        <Association Name="FK__Goods__G_Categor__1920BF5C">
+          <End Role="CategoryOfGoods" Type="Self.CategoryOfGoods" Multiplicity="0..1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryOfGoods">
+              <PropertyRef Name="C_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="G_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Goods__G_User__1A14E395">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="Goods">
+              <PropertyRef Name="G_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShopRecor__SR_Go__25869641">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="G_ID" />
+            </Principal>
+            <Dependent Role="ShopRecords">
+              <PropertyRef Name="SR_Good" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserComme__UC_Go__2C3393D0">
+          <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+          <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods">
+              <PropertyRef Name="G_ID" />
+            </Principal>
+            <Dependent Role="GoodsComments">
+              <PropertyRef Name="GC_Good" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserComme__UC_Us__2B3F6F97">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="GoodsComments">
+              <PropertyRef Name="GC_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageComments_Messages">
+          <End Role="Messages" Type="Self.Messages" Multiplicity="0..1" />
+          <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="M_ID" />
+            </Principal>
+            <Dependent Role="MessageComments">
+              <PropertyRef Name="MC_Message" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MessageComments_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="MessageComments">
+              <PropertyRef Name="MC_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Messages_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="M_Users" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShopRecor__SR_Us__24927208">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="U_ID" />
+            </Principal>
+            <Dependent Role="ShopRecords">
+              <PropertyRef Name="SR_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CampusFleaMarketDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoryOfGoods" EntityType="Self.CategoryOfGoods" />
+          <EntitySet Name="Goods" EntityType="Self.Goods" />
+          <EntitySet Name="GoodsComments" EntityType="Self.GoodsComments" />
+          <EntitySet Name="MessageComments" EntityType="Self.MessageComments" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" />
+          <EntitySet Name="ShopRecords" EntityType="Self.ShopRecords" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK__Goods__G_Categor__1920BF5C" Association="Self.FK__Goods__G_Categor__1920BF5C">
+            <End Role="CategoryOfGoods" EntitySet="CategoryOfGoods" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Goods__G_User__1A14E395" Association="Self.FK__Goods__G_User__1A14E395">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Goods" EntitySet="Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShopRecor__SR_Go__25869641" Association="Self.FK__ShopRecor__SR_Go__25869641">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="ShopRecords" EntitySet="ShopRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserComme__UC_Go__2C3393D0" Association="Self.FK__UserComme__UC_Go__2C3393D0">
+            <End Role="Goods" EntitySet="Goods" />
+            <End Role="GoodsComments" EntitySet="GoodsComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserComme__UC_Us__2B3F6F97" Association="Self.FK__UserComme__UC_Us__2B3F6F97">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="GoodsComments" EntitySet="GoodsComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageComments_Messages" Association="Self.FK_MessageComments_Messages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="MessageComments" EntitySet="MessageComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MessageComments_Users" Association="Self.FK_MessageComments_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MessageComments" EntitySet="MessageComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShopRecor__SR_Us__24927208" Association="Self.FK__ShopRecor__SR_Us__24927208">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ShopRecords" EntitySet="ShopRecords" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CampusFleaMarketDBModelStoreContainer" CdmEntityContainer="CampusFleaMarketDBEntities">
+          <EntitySetMapping Name="CategoryOfGoods">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.CategoryOfGoods">
+              <MappingFragment StoreEntitySet="CategoryOfGoods">
+                <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+                <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goods">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Goods">
+              <MappingFragment StoreEntitySet="Goods">
+                <ScalarProperty Name="G_ID" ColumnName="G_ID" />
+                <ScalarProperty Name="G_Name" ColumnName="G_Name" />
+                <ScalarProperty Name="G_Category" ColumnName="G_Category" />
+                <ScalarProperty Name="G_Description" ColumnName="G_Description" />
+                <ScalarProperty Name="G_User" ColumnName="G_User" />
+                <ScalarProperty Name="G_Price" ColumnName="G_Price" />
+                <ScalarProperty Name="G_Inventory" ColumnName="G_Inventory" />
+                <ScalarProperty Name="G_Date" ColumnName="G_Date" />
+                <ScalarProperty Name="G_SalesVolume" ColumnName="G_SalesVolume" />
+                <ScalarProperty Name="G_State" ColumnName="G_State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoodsComments">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.GoodsComments">
+              <MappingFragment StoreEntitySet="GoodsComments">
+                <ScalarProperty Name="GC_ID" ColumnName="GC_ID" />
+                <ScalarProperty Name="GC_User" ColumnName="GC_User" />
+                <ScalarProperty Name="GC_Content" ColumnName="GC_Content" />
+                <ScalarProperty Name="GC_Point" ColumnName="GC_Point" />
+                <ScalarProperty Name="GC_Good" ColumnName="GC_Good" />
+                <ScalarProperty Name="GC_Date" ColumnName="GC_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MessageComments">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.MessageComments">
+              <MappingFragment StoreEntitySet="MessageComments">
+                <ScalarProperty Name="MC_ID" ColumnName="MC_ID" />
+                <ScalarProperty Name="MC_Date" ColumnName="MC_Date" />
+                <ScalarProperty Name="MC_Content" ColumnName="MC_Content" />
+                <ScalarProperty Name="MC_User" ColumnName="MC_User" />
+                <ScalarProperty Name="MC_Message" ColumnName="MC_Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Messages">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="M_ID" ColumnName="M_ID" />
+                <ScalarProperty Name="M_Description" ColumnName="M_Description" />
+                <ScalarProperty Name="M_Date" ColumnName="M_Date" />
+                <ScalarProperty Name="M_Users" ColumnName="M_Users" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopRecords">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.ShopRecords">
+              <MappingFragment StoreEntitySet="ShopRecords">
+                <ScalarProperty Name="SR_ID" ColumnName="SR_ID" />
+                <ScalarProperty Name="SR_RecordNumber" ColumnName="SR_RecordNumber" />
+                <ScalarProperty Name="SR_User" ColumnName="SR_User" />
+                <ScalarProperty Name="SR_Good" ColumnName="SR_Good" />
+                <ScalarProperty Name="SR_GoodCount" ColumnName="SR_GoodCount" />
+                <ScalarProperty Name="SR_OrderDate" ColumnName="SR_OrderDate" />
+                <ScalarProperty Name="SR_PayType" ColumnName="SR_PayType" />
+                <ScalarProperty Name="SR_Address" ColumnName="SR_Address" />
+                <ScalarProperty Name="SR_Money" ColumnName="SR_Money" />
+                <ScalarProperty Name="SR_ConfirmDate" ColumnName="SR_ConfirmDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+                <ScalarProperty Name="U_StuNumber" ColumnName="U_StuNumber" />
+                <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+                <ScalarProperty Name="U_Passward" ColumnName="U_Passward" />
+                <ScalarProperty Name="U_Phone" ColumnName="U_Phone" />
+                <ScalarProperty Name="U_HeadImage" ColumnName="U_HeadImage" />
+                <ScalarProperty Name="U_CompusCard" ColumnName="U_CompusCard" />
+                <ScalarProperty Name="U_State" ColumnName="U_State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

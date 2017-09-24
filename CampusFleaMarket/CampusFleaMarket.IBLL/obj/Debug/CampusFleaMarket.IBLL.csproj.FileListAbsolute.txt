@@ -1,0 +1,11 @@
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\CampusFleaMarket.IBLL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\CampusFleaMarket.IBLL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\obj\Debug\CampusFleaMarket.IBLL.csprojResolveAssemblyReference.cache
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\obj\Debug\CampusFleaMarket.IBLL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\obj\Debug\CampusFleaMarket.IBLL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\CampusFleaMarket.IBLL.dll.config
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\CampusFleaMarket.Model.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\EntityFramework.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\CampusFleaMarket.Model.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\EntityFramework.xml
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll

@@ -1,0 +1,5 @@
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\GUID\bin\Debug\GUID.exe.config
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\GUID\bin\Debug\GUID.exe
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\GUID\bin\Debug\GUID.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\GUID\obj\Debug\GUID.exe
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\GUID\obj\Debug\GUID.pdb

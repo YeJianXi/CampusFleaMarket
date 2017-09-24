@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CampusFleaMarketDBModelStoreContainer" CdmEntityContainer="CampusFleaMarketDBEntities">
+    <EntitySetMapping Name="CategoryOfGoods">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.CategoryOfGoods">
+        <MappingFragment StoreEntitySet="CategoryOfGoods">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FastSellingGood">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.FastSellingGood">
+        <MappingFragment StoreEntitySet="FastSellingGood">
+          <ScalarProperty Name="FG_ID" ColumnName="FG_ID" />
+          <ScalarProperty Name="FG_Good" ColumnName="FG_Good" />
+          <ScalarProperty Name="FG_SellQuantity" ColumnName="FG_SellQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodNews">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.GoodNews">
+        <MappingFragment StoreEntitySet="GoodNews">
+          <ScalarProperty Name="GN_ID" ColumnName="GN_ID" />
+          <ScalarProperty Name="GN_Title" ColumnName="GN_Title" />
+          <ScalarProperty Name="GN_Content" ColumnName="GN_Content" />
+          <ScalarProperty Name="GN_Picture" ColumnName="GN_Picture" />
+          <ScalarProperty Name="GN_Good" ColumnName="GN_Good" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="G_ID" ColumnName="G_ID" />
+          <ScalarProperty Name="G_Name" ColumnName="G_Name" />
+          <ScalarProperty Name="G_Category" ColumnName="G_Category" />
+          <ScalarProperty Name="G_Description" ColumnName="G_Description" />
+          <ScalarProperty Name="G_User" ColumnName="G_User" />
+          <ScalarProperty Name="G_Price" ColumnName="G_Price" />
+          <ScalarProperty Name="G_Inventory" ColumnName="G_Inventory" />
+          <ScalarProperty Name="G_Date" ColumnName="G_Date" />
+          <ScalarProperty Name="G_SalesVolume" ColumnName="G_SalesVolume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.OrderDetails">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OD_ID" ColumnName="OD_ID" />
+          <ScalarProperty Name="OD_Good" ColumnName="OD_Good" />
+          <ScalarProperty Name="OD_GoodCount" ColumnName="OD_GoodCount" />
+          <ScalarProperty Name="OD_UnitPrice" ColumnName="OD_UnitPrice" />
+          <ScalarProperty Name="OD_Total" ColumnName="OD_Total" />
+          <ScalarProperty Name="OD_Address" ColumnName="OD_Address" />
+          <ScalarProperty Name="OD_PayWay" ColumnName="OD_PayWay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="O_ID" ColumnName="O_ID" />
+          <ScalarProperty Name="O_Detail" ColumnName="O_Detail" />
+          <ScalarProperty Name="O_DownUser" ColumnName="O_DownUser" />
+          <ScalarProperty Name="O_ReceiveUser" ColumnName="O_ReceiveUser" />
+          <ScalarProperty Name="O_State" ColumnName="O_State" />
+          <ScalarProperty Name="O_Date" ColumnName="O_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RankingUsers">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.RankingUsers">
+        <MappingFragment StoreEntitySet="RankingUsers">
+          <ScalarProperty Name="RU_ID" ColumnName="RU_ID" />
+          <ScalarProperty Name="RU_User" ColumnName="RU_User" />
+          <ScalarProperty Name="RU_TotalPoint" ColumnName="RU_TotalPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisterUsers">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.RegisterUsers">
+        <MappingFragment StoreEntitySet="RegisterUsers">
+          <ScalarProperty Name="RU_ID" ColumnName="RU_ID" />
+          <ScalarProperty Name="RU_StuNumber" ColumnName="RU_StuNumber" />
+          <ScalarProperty Name="RU_Passward" ColumnName="RU_Passward" />
+          <ScalarProperty Name="RU_Phone" ColumnName="RU_Phone" />
+          <ScalarProperty Name="RU_IDCard" ColumnName="RU_IDCard" />
+          <ScalarProperty Name="RU_CompusCard" ColumnName="RU_CompusCard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShopRecords">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.ShopRecords">
+        <MappingFragment StoreEntitySet="ShopRecords">
+          <ScalarProperty Name="SR_ID" ColumnName="SR_ID" />
+          <ScalarProperty Name="SR_User" ColumnName="SR_User" />
+          <ScalarProperty Name="SR_Good" ColumnName="SR_Good" />
+          <ScalarProperty Name="SR_GoodCount" ColumnName="SR_GoodCount" />
+          <ScalarProperty Name="SR_Date" ColumnName="SR_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuspiciousGoods">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.SuspiciousGoods">
+        <MappingFragment StoreEntitySet="SuspiciousGoods">
+          <ScalarProperty Name="SG_ID" ColumnName="SG_ID" />
+          <ScalarProperty Name="SG_Good" ColumnName="SG_Good" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserComments">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.UserComments">
+        <MappingFragment StoreEntitySet="UserComments">
+          <ScalarProperty Name="UC_ID" ColumnName="UC_ID" />
+          <ScalarProperty Name="UC_User" ColumnName="UC_User" />
+          <ScalarProperty Name="UC_Content" ColumnName="UC_Content" />
+          <ScalarProperty Name="UC_Point" ColumnName="UC_Point" />
+          <ScalarProperty Name="UC_Good" ColumnName="UC_Good" />
+          <ScalarProperty Name="UC_Date" ColumnName="UC_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CampusFleaMarketDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="U_StuNumber" ColumnName="U_StuNumber" />
+          <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+          <ScalarProperty Name="U_Passward" ColumnName="U_Passward" />
+          <ScalarProperty Name="U_Phone" ColumnName="U_Phone" />
+          <ScalarProperty Name="U_IDCard" ColumnName="U_IDCard" />
+          <ScalarProperty Name="U_CompusCard" ColumnName="U_CompusCard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

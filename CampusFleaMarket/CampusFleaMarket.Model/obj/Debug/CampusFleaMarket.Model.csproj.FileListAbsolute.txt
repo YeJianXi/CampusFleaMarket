@@ -1,0 +1,9 @@
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\CampusFleaMarket.Model.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\CampusFleaMarket.Model.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\obj\Debug\CampusFleaMarket.Model.csprojResolveAssemblyReference.cache
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\obj\Debug\CampusFleaMarket.Model.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\obj\Debug\CampusFleaMarket.Model.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\CampusFleaMarket.Model.dll.config
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\EntityFramework.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\EntityFramework.xml
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll

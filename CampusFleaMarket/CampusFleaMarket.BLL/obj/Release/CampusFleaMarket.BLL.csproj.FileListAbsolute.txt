@@ -1,0 +1,12 @@
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.BLL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.BLL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.DAL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.Model.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\EntityFramework.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.DAL.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\CampusFleaMarket.Model.pdb
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\EntityFramework.xml
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\obj\Release\CampusFleaMarket.BLL.csprojResolveAssemblyReference.cache
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\obj\Release\CampusFleaMarket.BLL.dll
+C:\Users\JY\毕业设计-叶剑喜小组\校园跳蚤市场项目\CampusFleaMarket\CampusFleaMarket.BLL\obj\Release\CampusFleaMarket.BLL.pdb

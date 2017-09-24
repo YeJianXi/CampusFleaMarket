@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CampusFleaMarketDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CategoryOfGoods">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__G_Categor__1920BF5C" FromRole="CategoryOfGoods" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="G_ID" />
+    </Key>
+    <Property Name="G_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="G_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="G_Category" Type="Int32" />
+    <Property Name="G_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="G_User" Type="Int32" />
+    <Property Name="G_Price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="G_Inventory" Type="Int32" />
+    <Property Name="G_Date" Type="DateTime" Precision="3" />
+    <Property Name="G_SalesVolume" Type="Int32" />
+    <Property Name="G_State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CategoryOfGoods" Relationship="Self.FK__Goods__G_Categor__1920BF5C" FromRole="Goods" ToRole="CategoryOfGoods" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Goods__G_User__1A14E395" FromRole="Goods" ToRole="Users" />
+    <NavigationProperty Name="ShopRecords" Relationship="Self.FK__ShopRecor__SR_Go__25869641" FromRole="Goods" ToRole="ShopRecords" />
+    <NavigationProperty Name="GoodsComments" Relationship="Self.FK__UserComme__UC_Go__2C3393D0" FromRole="Goods" ToRole="GoodsComments" />
+  </EntityType>
+  <EntityType Name="GoodsComments">
+    <Key>
+      <PropertyRef Name="GC_ID" />
+    </Key>
+    <Property Name="GC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GC_User" Type="Int32" />
+    <Property Name="GC_Content" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="GC_Point" Type="Double" />
+    <Property Name="GC_Good" Type="Int32" />
+    <Property Name="GC_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__UserComme__UC_Go__2C3393D0" FromRole="GoodsComments" ToRole="Goods" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__UserComme__UC_Us__2B3F6F97" FromRole="GoodsComments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="MessageComments">
+    <Key>
+      <PropertyRef Name="MC_ID" />
+    </Key>
+    <Property Name="MC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MC_Date" Type="DateTime" Precision="3" />
+    <Property Name="MC_Content" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MC_User" Type="Int32" />
+    <Property Name="MC_Message" Type="Int32" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_MessageComments_Messages" FromRole="MessageComments" ToRole="Messages" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_MessageComments_Users" FromRole="MessageComments" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="M_ID" />
+    </Key>
+    <Property Name="M_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="M_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="M_Date" Type="DateTime" Precision="3" />
+    <Property Name="M_Users" Type="Int32" />
+    <NavigationProperty Name="MessageComments" Relationship="Self.FK_MessageComments_Messages" FromRole="Messages" ToRole="MessageComments" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Messages_Users" FromRole="Messages" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ShopRecords">
+    <Key>
+      <PropertyRef Name="SR_ID" />
+    </Key>
+    <Property Name="SR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SR_RecordNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SR_User" Type="Int32" />
+    <Property Name="SR_Good" Type="Int32" />
+    <Property Name="SR_GoodCount" Type="Int32" />
+    <Property Name="SR_OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="SR_PayType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SR_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SR_Money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SR_ConfirmDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__ShopRecor__SR_Go__25869641" FromRole="ShopRecords" ToRole="Goods" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__ShopRecor__SR_Us__24927208" FromRole="ShopRecords" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_StuNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="U_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="U_Passward" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="U_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="U_HeadImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="U_CompusCard" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="U_State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__G_User__1A14E395" FromRole="Users" ToRole="Goods" />
+    <NavigationProperty Name="GoodsComments" Relationship="Self.FK__UserComme__UC_Us__2B3F6F97" FromRole="Users" ToRole="GoodsComments" />
+    <NavigationProperty Name="MessageComments" Relationship="Self.FK_MessageComments_Users" FromRole="Users" ToRole="MessageComments" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="ShopRecords" Relationship="Self.FK__ShopRecor__SR_Us__24927208" FromRole="Users" ToRole="ShopRecords" />
+  </EntityType>
+  <Association Name="FK__Goods__G_Categor__1920BF5C">
+    <End Role="CategoryOfGoods" Type="Self.CategoryOfGoods" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryOfGoods">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="G_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__G_User__1A14E395">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="G_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShopRecor__SR_Go__25869641">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="ShopRecords">
+        <PropertyRef Name="SR_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserComme__UC_Go__2C3393D0">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="0..1" />
+    <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="GoodsComments">
+        <PropertyRef Name="GC_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserComme__UC_Us__2B3F6F97">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="GoodsComments" Type="Self.GoodsComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="GoodsComments">
+        <PropertyRef Name="GC_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageComments_Messages">
+    <End Role="Messages" Type="Self.Messages" Multiplicity="0..1" />
+    <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="M_ID" />
+      </Principal>
+      <Dependent Role="MessageComments">
+        <PropertyRef Name="MC_Message" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageComments_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="MessageComments" Type="Self.MessageComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="MessageComments">
+        <PropertyRef Name="MC_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="M_Users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShopRecor__SR_Us__24927208">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="ShopRecords" Type="Self.ShopRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="ShopRecords">
+        <PropertyRef Name="SR_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CampusFleaMarketDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CategoryOfGoods" EntityType="Self.CategoryOfGoods" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="GoodsComments" EntityType="Self.GoodsComments" />
+    <EntitySet Name="MessageComments" EntityType="Self.MessageComments" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" />
+    <EntitySet Name="ShopRecords" EntityType="Self.ShopRecords" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Goods__G_Categor__1920BF5C" Association="Self.FK__Goods__G_Categor__1920BF5C">
+      <End Role="CategoryOfGoods" EntitySet="CategoryOfGoods" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__G_User__1A14E395" Association="Self.FK__Goods__G_User__1A14E395">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShopRecor__SR_Go__25869641" Association="Self.FK__ShopRecor__SR_Go__25869641">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="ShopRecords" EntitySet="ShopRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserComme__UC_Go__2C3393D0" Association="Self.FK__UserComme__UC_Go__2C3393D0">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="GoodsComments" EntitySet="GoodsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserComme__UC_Us__2B3F6F97" Association="Self.FK__UserComme__UC_Us__2B3F6F97">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="GoodsComments" EntitySet="GoodsComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageComments_Messages" Association="Self.FK_MessageComments_Messages">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="MessageComments" EntitySet="MessageComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageComments_Users" Association="Self.FK_MessageComments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MessageComments" EntitySet="MessageComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShopRecor__SR_Us__24927208" Association="Self.FK__ShopRecor__SR_Us__24927208">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShopRecords" EntitySet="ShopRecords" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

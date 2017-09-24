@@ -1,0 +1,120 @@
+﻿@model IEnumerable<CampusFleaMarket.Model.Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Manager_Layout.cshtml";
+}
+
+@section styles{
+
+    <style>
+        .d_td {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 10px 10px;
+        }
+    </style>
+
+
+}
+<h3>注册用户列表</h3>
+<button type="button" id="Create" data-toggle="modal" data-target="#modal-dialog" class="btn btn-default">添加</button>
+<button type="button" id="AllDelte" class="btn btn-default">批量删除</button>
+@using (Html.BeginForm("AllDelete", "UserManager", FormMethod.Post, new { id = "AllDeleteForm" }))
+{
+
+    <table id="showTable" border="1" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <input type="checkbox" id="checkAll" />全选
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.U_StuNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_Passward)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_State)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="5%">
+                    <input type="checkbox" name="select" value="@item.U_ID" />
+                </td>
+                <td width="10%">
+                    <div class="d_td">  @Html.DisplayFor(modelItem => item.U_StuNumber)</div>
+                </td>
+                <td width="20%">
+                    <div class="d_td"> @Html.DisplayFor(modelItem => item.U_Name)</div>
+                </td>
+                <td>
+                    <div class="d_td"> @Html.DisplayFor(modelItem => item.U_Passward)</div>
+                </td>
+                <td width="15%">
+                    <div class="d_td"> @Html.DisplayFor(modelItem => item.U_Phone)</div>
+                </td>
+
+                <td>
+                    <div class="d_td"> @(item.U_State == "0" ? "未通过" : "已通过")</div>
+                </td>
+                <td width="150px">
+                    <div class="d_td">
+                        <button type="button" data-primaryid="@item.U_ID" data-toggle="modal" data-target="#modal-dialog" class="btn btn-default Edit">修改</button>  |
+                        <button type="button" data-primaryid="@item.U_ID" data-toggle="modal" data-target="#modal-dialog" class="btn btn-default Detail">详细</button>  |
+                        <button type="button" data-primaryid="@item.U_ID" data-toggle="modal" data-target="#modal-dialog" class="btn btn-default Delete">删除</button>  
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+<ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    @for (int i = 1; i <= ViewBag.total; i++)
+    {
+            
+        <li>@Html.ActionLink(i.ToString(), "index", new { currentPage = i, dataCount = 10 })</li>
+    }
+    <li><a href="#">&raquo;</a></li>
+</ul>
+
+
+
+
+
+<!-- 模态框（Modal）2 -->
+<div class="modal fade" id="modal-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div id="modal-content" class="modal-content">
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+
+
+@section scripts{
+    //菜单列设置样式
+    $(".cfm-num2List li").eq(0).css("background-color", "#FCFCFC");
+
+
+}
+@Scripts.Render("~/Content/UserManagerJs")

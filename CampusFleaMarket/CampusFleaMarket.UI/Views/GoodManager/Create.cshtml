@@ -1,0 +1,86 @@
+﻿@model CampusFleaMarket.Model.Goods
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>添加</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>二手物品信息</legend>
+
+
+        <div class="editor-label">
+            二手物品名称
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.G_Name)
+            @Html.ValidationMessageFor(model => model.G_Name)
+        </div>
+
+        <div class="editor-label">
+            类别
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("G_Category")
+            @Html.ValidationMessageFor(model => model.CategoryOfGoods)
+        </div>
+
+        <div class="editor-label">
+          描述
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.G_Description)
+            @Html.ValidationMessageFor(model => model.G_Description)
+        </div>
+
+        <div class="editor-label">
+           发布者
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("G_User")
+            @Html.ValidationMessageFor(model => model.G_User)
+        </div>
+
+        <div class="editor-label">
+            价格
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.G_Price)
+            @Html.ValidationMessageFor(model => model.G_Price)
+        </div>
+
+        <div class="editor-label">
+            库存
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.G_Inventory)
+            @Html.ValidationMessageFor(model => model.G_Inventory)
+        </div>
+
+
+        <div class="editor-label">
+            审核状态
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.G_State)
+            @Html.ValidationMessageFor(model => model.G_State)
+        </div>
+
+        <p>
+            <input type="submit" value="添加" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("返回二手物品列表", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CampusFleaMarketDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CampusFleaMarketDBModelStoreContainer">
+    <EntitySet Name="CategoryOfGoods" EntityType="CampusFleaMarketDBModel.Store.CategoryOfGoods" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FastSellingGood" EntityType="CampusFleaMarketDBModel.Store.FastSellingGood" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodNews" EntityType="CampusFleaMarketDBModel.Store.GoodNews" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Goods" EntityType="CampusFleaMarketDBModel.Store.Goods" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderDetails" EntityType="CampusFleaMarketDBModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="CampusFleaMarketDBModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RankingUsers" EntityType="CampusFleaMarketDBModel.Store.RankingUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegisterUsers" EntityType="CampusFleaMarketDBModel.Store.RegisterUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShopRecords" EntityType="CampusFleaMarketDBModel.Store.ShopRecords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SuspiciousGoods" EntityType="CampusFleaMarketDBModel.Store.SuspiciousGoods" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="CampusFleaMarketDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserComments" EntityType="CampusFleaMarketDBModel.Store.UserComments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="CampusFleaMarketDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__FastSelli__FG_Go__2F10007B" Association="CampusFleaMarketDBModel.Store.FK__FastSelli__FG_Go__2F10007B">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="FastSellingGood" EntitySet="FastSellingGood" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GoodNews__GN_ID__34C8D9D1" Association="CampusFleaMarketDBModel.Store.FK__GoodNews__GN_ID__34C8D9D1">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="GoodNews" EntitySet="GoodNews" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__G_Categor__1920BF5C" Association="CampusFleaMarketDBModel.Store.FK__Goods__G_Categor__1920BF5C">
+      <End Role="CategoryOfGoods" EntitySet="CategoryOfGoods" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__G_User__1A14E395" Association="CampusFleaMarketDBModel.Store.FK__Goods__G_User__1A14E395">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__OD_Go__1CF15040" Association="CampusFleaMarketDBModel.Store.FK__OrderDeta__OD_Go__1CF15040">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__O_Detail__1FCDBCEB" Association="CampusFleaMarketDBModel.Store.FK__Orders__O_Detail__1FCDBCEB">
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__O_DownUs__20C1E124" Association="CampusFleaMarketDBModel.Store.FK__Orders__O_DownUs__20C1E124">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__O_Receiv__21B6055D" Association="CampusFleaMarketDBModel.Store.FK__Orders__O_Receiv__21B6055D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RankingUs__RU_ID__286302EC" Association="CampusFleaMarketDBModel.Store.FK__RankingUs__RU_ID__286302EC">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RankingUsers" EntitySet="RankingUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShopRecor__SR_Go__25869641" Association="CampusFleaMarketDBModel.Store.FK__ShopRecor__SR_Go__25869641">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="ShopRecords" EntitySet="ShopRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ShopRecor__SR_Us__24927208" Association="CampusFleaMarketDBModel.Store.FK__ShopRecor__SR_Us__24927208">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShopRecords" EntitySet="ShopRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Suspiciou__SG_Go__31EC6D26" Association="CampusFleaMarketDBModel.Store.FK__Suspiciou__SG_Go__31EC6D26">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="SuspiciousGoods" EntitySet="SuspiciousGoods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserComme__UC_Go__2C3393D0" Association="CampusFleaMarketDBModel.Store.FK__UserComme__UC_Go__2C3393D0">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="UserComments" EntitySet="UserComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserComme__UC_Us__2B3F6F97" Association="CampusFleaMarketDBModel.Store.FK__UserComme__UC_Us__2B3F6F97">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserComments" EntitySet="UserComments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CategoryOfGoods">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="C_Name" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="FastSellingGood">
+    <Key>
+      <PropertyRef Name="FG_ID" />
+    </Key>
+    <Property Name="FG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FG_Good" Type="int" />
+    <Property Name="FG_SellQuantity" Type="int" />
+  </EntityType>
+  <EntityType Name="GoodNews">
+    <Key>
+      <PropertyRef Name="GN_ID" />
+    </Key>
+    <Property Name="GN_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GN_Title" Type="varchar" MaxLength="20" />
+    <Property Name="GN_Content" Type="varchar" MaxLength="200" />
+    <Property Name="GN_Picture" Type="varchar" MaxLength="100" />
+    <Property Name="GN_Good" Type="int" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="G_ID" />
+    </Key>
+    <Property Name="G_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="G_Name" Type="varchar" MaxLength="20" />
+    <Property Name="G_Category" Type="int" />
+    <Property Name="G_Description" Type="varchar" MaxLength="500" />
+    <Property Name="G_User" Type="int" />
+    <Property Name="G_Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="G_Inventory" Type="int" />
+    <Property Name="G_Date" Type="datetime" />
+    <Property Name="G_SalesVolume" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OD_ID" />
+    </Key>
+    <Property Name="OD_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OD_Good" Type="int" />
+    <Property Name="OD_GoodCount" Type="int" />
+    <Property Name="OD_UnitPrice" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="OD_Total" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="OD_Address" Type="varchar" MaxLength="20" />
+    <Property Name="OD_PayWay" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="O_Detail" Type="int" />
+    <Property Name="O_DownUser" Type="int" />
+    <Property Name="O_ReceiveUser" Type="int" />
+    <Property Name="O_State" Type="varchar" MaxLength="10" />
+    <Property Name="O_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RankingUsers">
+    <Key>
+      <PropertyRef Name="RU_ID" />
+    </Key>
+    <Property Name="RU_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RU_User" Type="int" />
+    <Property Name="RU_TotalPoint" Type="float" />
+  </EntityType>
+  <EntityType Name="RegisterUsers">
+    <Key>
+      <PropertyRef Name="RU_ID" />
+    </Key>
+    <Property Name="RU_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RU_StuNumber" Type="varchar" MaxLength="20" />
+    <Property Name="RU_Passward" Type="varchar" MaxLength="20" />
+    <Property Name="RU_Phone" Type="varchar" MaxLength="20" />
+    <Property Name="RU_IDCard" Type="image" />
+    <Property Name="RU_CompusCard" Type="image" />
+  </EntityType>
+  <EntityType Name="ShopRecords">
+    <Key>
+      <PropertyRef Name="SR_ID" />
+    </Key>
+    <Property Name="SR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SR_User" Type="int" />
+    <Property Name="SR_Good" Type="int" />
+    <Property Name="SR_GoodCount" Type="int" />
+    <Property Name="SR_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SuspiciousGoods">
+    <Key>
+      <PropertyRef Name="SG_ID" />
+    </Key>
+    <Property Name="SG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SG_Good" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserComments">
+    <Key>
+      <PropertyRef Name="UC_ID" />
+    </Key>
+    <Property Name="UC_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UC_User" Type="int" />
+    <Property Name="UC_Content" Type="varchar" MaxLength="500" />
+    <Property Name="UC_Point" Type="float" />
+    <Property Name="UC_Good" Type="int" />
+    <Property Name="UC_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="U_StuNumber" Type="varchar" MaxLength="20" />
+    <Property Name="U_Name" Type="varchar" MaxLength="20" />
+    <Property Name="U_Passward" Type="varchar" MaxLength="20" />
+    <Property Name="U_Phone" Type="varchar" MaxLength="20" />
+    <Property Name="U_IDCard" Type="image" />
+    <Property Name="U_CompusCard" Type="image" />
+  </EntityType>
+  <Association Name="FK__FastSelli__FG_Go__2F10007B">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="0..1" />
+    <End Role="FastSellingGood" Type="CampusFleaMarketDBModel.Store.FastSellingGood" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="FastSellingGood">
+        <PropertyRef Name="FG_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GoodNews__GN_ID__34C8D9D1">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="1" />
+    <End Role="GoodNews" Type="CampusFleaMarketDBModel.Store.GoodNews" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="GoodNews">
+        <PropertyRef Name="GN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__G_Categor__1920BF5C">
+    <End Role="CategoryOfGoods" Type="CampusFleaMarketDBModel.Store.CategoryOfGoods" Multiplicity="0..1" />
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryOfGoods">
+        <PropertyRef Name="C_ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="G_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__G_User__1A14E395">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="0..1" />
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="G_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__OD_Go__1CF15040">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="0..1" />
+    <End Role="OrderDetails" Type="CampusFleaMarketDBModel.Store.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OD_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__O_Detail__1FCDBCEB">
+    <End Role="OrderDetails" Type="CampusFleaMarketDBModel.Store.OrderDetails" Multiplicity="0..1" />
+    <End Role="Orders" Type="CampusFleaMarketDBModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetails">
+        <PropertyRef Name="OD_ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="O_Detail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__O_DownUs__20C1E124">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="0..1" />
+    <End Role="Orders" Type="CampusFleaMarketDBModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="O_DownUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__O_Receiv__21B6055D">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="0..1" />
+    <End Role="Orders" Type="CampusFleaMarketDBModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="O_ReceiveUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RankingUs__RU_ID__286302EC">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="1" />
+    <End Role="RankingUsers" Type="CampusFleaMarketDBModel.Store.RankingUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="RankingUsers">
+        <PropertyRef Name="RU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShopRecor__SR_Go__25869641">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="0..1" />
+    <End Role="ShopRecords" Type="CampusFleaMarketDBModel.Store.ShopRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="ShopRecords">
+        <PropertyRef Name="SR_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ShopRecor__SR_Us__24927208">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="0..1" />
+    <End Role="ShopRecords" Type="CampusFleaMarketDBModel.Store.ShopRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="ShopRecords">
+        <PropertyRef Name="SR_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Suspiciou__SG_Go__31EC6D26">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="0..1" />
+    <End Role="SuspiciousGoods" Type="CampusFleaMarketDBModel.Store.SuspiciousGoods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="SuspiciousGoods">
+        <PropertyRef Name="SG_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserComme__UC_Go__2C3393D0">
+    <End Role="Goods" Type="CampusFleaMarketDBModel.Store.Goods" Multiplicity="0..1" />
+    <End Role="UserComments" Type="CampusFleaMarketDBModel.Store.UserComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="G_ID" />
+      </Principal>
+      <Dependent Role="UserComments">
+        <PropertyRef Name="UC_Good" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserComme__UC_Us__2B3F6F97">
+    <End Role="Users" Type="CampusFleaMarketDBModel.Store.Users" Multiplicity="0..1" />
+    <End Role="UserComments" Type="CampusFleaMarketDBModel.Store.UserComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="U_ID" />
+      </Principal>
+      <Dependent Role="UserComments">
+        <PropertyRef Name="UC_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

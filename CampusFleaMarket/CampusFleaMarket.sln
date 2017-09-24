@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.DAL", "CampusFleaMarket.DAL\CampusFleaMarket.DAL.csproj", "{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.BLL", "CampusFleaMarket.BLL\CampusFleaMarket.BLL.csproj", "{9DC7B890-E1AB-4882-878C-69B5D29BDE47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.Model", "CampusFleaMarket.Model\CampusFleaMarket.Model.csproj", "{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{21B6AD8E-466D-4CD9-89CE-B9918FB08E0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{775A625F-A186-418E-8C04-E28F47549D4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{313B69F3-93D9-4874-8CEC-54D05FCA497F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{DEE5D445-B22C-48A9-8AB1-F012746D0017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.IDAL", "CampusFleaMarket.IDAL\CampusFleaMarket.IDAL.csproj", "{91AF5112-8B7F-4709-A85E-724D3CC76EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.FactoryDal", "CampusFleaMarket.FactoryDal\CampusFleaMarket.FactoryDal.csproj", "{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.IBLL", "CampusFleaMarket.IBLL\CampusFleaMarket.IBLL.csproj", "{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.FactoryBLL", "CampusFleaMarket.FactoryBLL\CampusFleaMarket.FactoryBLL.csproj", "{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusFleaMarket.UI", "CampusFleaMarket.UI\CampusFleaMarket.UI.csproj", "{074235F5-EE7D-4CF6-8FC2-3DB6F532472C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{52507848-590D-4BD5-9CB6-B68A901B3E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUID", "GUID\GUID.csproj", "{A8A68F6F-BB11-4EE1-9D77-626087E1B358}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://yejianxi.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CampusFleaMarket.BLL\\CampusFleaMarket.BLL.csproj
+		SccProjectTopLevelParentUniqueName1 = CampusFleaMarket.sln
+		SccProjectName1 = CampusFleaMarket.BLL
+		SccLocalPath1 = CampusFleaMarket.BLL
+		SccProjectUniqueName2 = CampusFleaMarket.DAL\\CampusFleaMarket.DAL.csproj
+		SccProjectTopLevelParentUniqueName2 = CampusFleaMarket.sln
+		SccProjectName2 = CampusFleaMarket.DAL
+		SccLocalPath2 = CampusFleaMarket.DAL
+		SccProjectUniqueName3 = CampusFleaMarket.Model\\CampusFleaMarket.Model.csproj
+		SccProjectTopLevelParentUniqueName3 = CampusFleaMarket.sln
+		SccProjectName3 = CampusFleaMarket.Model
+		SccLocalPath3 = CampusFleaMarket.Model
+		SccProjectUniqueName4 = CampusFleaMarket.IDAL\\CampusFleaMarket.IDAL.csproj
+		SccProjectTopLevelParentUniqueName4 = CampusFleaMarket.sln
+		SccProjectName4 = CampusFleaMarket.IDAL
+		SccLocalPath4 = CampusFleaMarket.IDAL
+		SccProjectUniqueName5 = CampusFleaMarket.FactoryDal\\CampusFleaMarket.FactoryDal.csproj
+		SccProjectTopLevelParentUniqueName5 = CampusFleaMarket.sln
+		SccProjectName5 = CampusFleaMarket.FactoryDal
+		SccLocalPath5 = CampusFleaMarket.FactoryDal
+		SccProjectUniqueName6 = CampusFleaMarket.IBLL\\CampusFleaMarket.IBLL.csproj
+		SccProjectTopLevelParentUniqueName6 = CampusFleaMarket.sln
+		SccProjectName6 = CampusFleaMarket.IBLL
+		SccLocalPath6 = CampusFleaMarket.IBLL
+		SccProjectUniqueName7 = CampusFleaMarket.FactoryBLL\\CampusFleaMarket.FactoryBLL.csproj
+		SccProjectTopLevelParentUniqueName7 = CampusFleaMarket.sln
+		SccProjectName7 = CampusFleaMarket.FactoryBLL
+		SccLocalPath7 = CampusFleaMarket.FactoryBLL
+		SccProjectUniqueName8 = CampusFleaMarket.UI\\CampusFleaMarket.UI.csproj
+		SccProjectTopLevelParentUniqueName8 = CampusFleaMarket.sln
+		SccProjectName8 = CampusFleaMarket.UI
+		SccLocalPath8 = CampusFleaMarket.UI
+		SccProjectUniqueName9 = GUID\\GUID.csproj
+		SccProjectTopLevelParentUniqueName9 = CampusFleaMarket.sln
+		SccProjectName9 = GUID
+		SccLocalPath9 = GUID
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC7B890-E1AB-4882-878C-69B5D29BDE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC7B890-E1AB-4882-878C-69B5D29BDE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC7B890-E1AB-4882-878C-69B5D29BDE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC7B890-E1AB-4882-878C-69B5D29BDE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AF5112-8B7F-4709-A85E-724D3CC76EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AF5112-8B7F-4709-A85E-724D3CC76EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AF5112-8B7F-4709-A85E-724D3CC76EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AF5112-8B7F-4709-A85E-724D3CC76EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074235F5-EE7D-4CF6-8FC2-3DB6F532472C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074235F5-EE7D-4CF6-8FC2-3DB6F532472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074235F5-EE7D-4CF6-8FC2-3DB6F532472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074235F5-EE7D-4CF6-8FC2-3DB6F532472C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A68F6F-BB11-4EE1-9D77-626087E1B358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A68F6F-BB11-4EE1-9D77-626087E1B358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A68F6F-BB11-4EE1-9D77-626087E1B358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A68F6F-BB11-4EE1-9D77-626087E1B358}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93CE36AE-1E74-4F2C-94B2-8F0FD8A430EF} = {21B6AD8E-466D-4CD9-89CE-B9918FB08E0F}
+		{91AF5112-8B7F-4709-A85E-724D3CC76EDE} = {21B6AD8E-466D-4CD9-89CE-B9918FB08E0F}
+		{BC6EC789-EB5F-41FD-AEA9-190A62DCE5E2} = {21B6AD8E-466D-4CD9-89CE-B9918FB08E0F}
+		{9DC7B890-E1AB-4882-878C-69B5D29BDE47} = {775A625F-A186-418E-8C04-E28F47549D4A}
+		{A3CD9FDF-A6EC-4534-AD54-A307721EF8A2} = {775A625F-A186-418E-8C04-E28F47549D4A}
+		{FE1C8BE3-8A79-4C1B-8EC8-A2387B1345D9} = {775A625F-A186-418E-8C04-E28F47549D4A}
+		{DA5DA1E7-81FE-4670-9F2D-DDF3DF1F60F7} = {313B69F3-93D9-4874-8CEC-54D05FCA497F}
+		{074235F5-EE7D-4CF6-8FC2-3DB6F532472C} = {DEE5D445-B22C-48A9-8AB1-F012746D0017}
+		{A8A68F6F-BB11-4EE1-9D77-626087E1B358} = {52507848-590D-4BD5-9CB6-B68A901B3E91}
+	EndGlobalSection
+EndGlobal

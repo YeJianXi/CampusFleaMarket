@@ -1,0 +1,84 @@
+﻿@model CampusFleaMarket.Model.Users
+<style>
+    tr {
+        background:black;
+    }
+ </style>
+<div id="modal-content2">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+    </div>
+
+    <div class="modal-body">
+
+
+        <fieldset>
+            <legend>详细信息</legend>
+            <table border="1" width="100%" align="center">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.U_StuNumber)</th>
+                    <td colspan="2">@Html.DisplayFor(model => model.U_StuNumber)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.U_Name)</th>
+                    <td colspan="2">@Html.DisplayFor(model => model.U_Name)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.U_Passward)</th>
+                    <td colspan="2">@Html.DisplayFor(model => model.U_Passward)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.CompusCard)</th>
+                    <td><img width="100px" src="/Image/CampusCard/@(ViewBag.Campuscard[0])" alt="图片不存在" /></td>
+                    <td>
+                        <img width="100px" src="/Image/CampusCard/@(ViewBag.Campuscard[1])" alt="图片不存在" />
+                    </td>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Head_Image)</th>
+                    <td colspan="2">@Html.DisplayFor(model => model.U_StuNumber)</td>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.U_StuNumber)</th>
+                    <td colspan="2">@Html.DisplayFor(model => model.U_StuNumber)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.U_State)</th>
+                    <td colspan="2">@(Model.U_State == "0" ? "未通过" : "已通过")</td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            关闭
+        </button>
+        <button type="submit" data-primaryid="@((int)ViewBag.id)" class="btn btn-primary Edit">
+            编辑
+        </button>
+    </div>
+</div>
+@*@Scripts.Render("~/bundles/jquery")*@
+<script>
+
+    $(document).ready(function () {
+
+        //编辑按钮点击跳弹框
+        $(".Edit").click(function () {
+            //alert("ajax请求修改部分视图")
+            var primaryId = $(this).data("primaryid");
+            //alert(primaryId)
+            $("#modal-content2").load("UserManager/PartialEdit", "id=" + primaryId, function (req, sta, xhr) {
+                //var a = document.getElementById("modal-content");
+                //a.innerText = req
+                //alert(req)
+            })
+
+        })
+
+
+    })
+
+</script>
+

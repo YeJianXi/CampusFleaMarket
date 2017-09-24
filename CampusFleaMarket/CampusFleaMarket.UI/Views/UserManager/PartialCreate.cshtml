@@ -1,0 +1,96 @@
+﻿@model CampusFleaMarket.Model.Users
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm("Create", "UserManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            创建用户
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <fieldset>
+            <legend>【填写信息】</legend>
+
+            <div class="o_container">
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.U_StuNumber)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.U_StuNumber)
+                    @Html.ValidationMessageFor(model => model.U_StuNumber)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.U_Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.U_Name)
+                    @Html.ValidationMessageFor(model => model.U_Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.U_Passward)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.U_Passward)
+                    @Html.ValidationMessageFor(model => model.U_Passward)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.U_Phone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.U_Phone)
+                    @Html.ValidationMessageFor(model => model.U_Phone)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Head_Image)
+                </div>
+                <div class="editor-field">
+                    <input type="file" accept="image/png,image/gif,image/jpg,image/jpeg" name="Head_Image" />
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CompusCard)
+                </div>
+                <div class="editor-field">
+                    <input type="file" multiple data-val="true" id="CompusCard" data-val-required="请上传你的校园卡" accept="image/png,image/gif,image/jpg,image/jpeg" name="CompusCard" />
+                    @Html.ValidationMessageFor(model => model.CompusCard)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.U_State)
+                </div>
+                <div class="editor-field">
+
+                    @Html.DropDownList("U_State");
+                    @Html.ValidationMessageFor(model => model.U_State)
+                </div>
+
+            </div>
+        </fieldset>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            关闭
+        </button>
+        <button type="submit" class="btn btn-primary">
+            添加
+        </button>
+    </div>
+
+
+}
